@@ -1,0 +1,31 @@
+package selenium_Assignments;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Lab3_LocateXpathCSS {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "C:\\My Drive\\Ascendis\\Sofwares\\Chrome Version 96\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+    
+        driver.get("http://www.google.com/");
+        driver.manage().window().maximize();
+        
+        System.out.println(driver.getCurrentUrl());
+        System.out.println(driver.getTitle());
+        //System.out.println(driver.getPageSource());
+        
+        WebElement we = driver.findElement(By.xpath("//html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input"));
+        we.sendKeys("About Broadridge");
+        
+        driver.findElement(By.xpath("//html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).click();
+               
+        
+		driver.close();
+	}
+
+}
